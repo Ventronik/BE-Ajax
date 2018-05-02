@@ -39,8 +39,8 @@ function getOne(req,res, next){
   .catch(next)
 }
 
-function delete(req, res, next) {
-  userModel.delete(req.params.id)
+function deletePost(req, res, next) {
+  userModel.deletePost(req.params.id)
   .then (function(data){
     return res.status(204).send({ data })
   })
@@ -55,5 +55,5 @@ module.exports = {
   create,
   getAll,
   getOne,
-  delete
+  deletePost
 }
