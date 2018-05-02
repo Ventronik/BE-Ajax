@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/Ventronik/BE-Ajax/issues"
   },
-  "homepage": "https://github.com/Ventronik/BE-Ajax#readme"
+  "homepage": "https://github.com/Ventronik/BE-Ajax#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "pg": "^7.4.1"
+  }
 }
