@@ -8,11 +8,11 @@ const userController = require('./controller')
 
 router.post('/', userController.create)
 
-router.get('/', userController.getAllUserPapers)
+router.get('/', userController.getAll)
 
-router.get('/:id/', userController.getAllUserPapers)
+router.get('/:id/', userController.getOne)
 
-router.delete('/:id/', userController.paperDelete)
+// router.delete('/:id/', userController.paperDelete)
 
 
 

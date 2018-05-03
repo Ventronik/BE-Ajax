@@ -2,11 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
-const authController = require('./controllers/auth')
+const authController = require('./controller')
 
-if(process.env.NODE_ENV !== 'production'){
-  require('dotenv').load()
-}
+// if(process.env.NODE_ENV !== 'production'){
+//   require('dotenv').load()
+// }
 
 const app = express()
 
@@ -50,7 +50,7 @@ app.use(function(err, req, res, next){
 // Starting Server
 //////////////////////////////////////////////////////////////////////////////
 
-const port = process.env.PORT || 3000
+const port = 3000
 
 app.listen(port, function(){
   console.log(`Listening on port ${port}`)

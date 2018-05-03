@@ -1,5 +1,4 @@
-const userModel = require('../models/users')
-const authController = require('./auth.js')
+const userModel = require('./model')
 
 //////////////////////////////////////////////////////////////////////////////
 // Basic CRUD Methods
@@ -8,7 +7,7 @@ const authController = require('./auth.js')
 function create(req, res, next){
 
   if(!req.body.title){
-    return next({ status: 400, message: 'Title Requred'})
+    return next({ status: 400, message: 'Title Required'})
   }
 
   if(!req.body.body){

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex": "knex",
-    "dev": "nodemon index.js"
+    "dev": "nodemon ./js/app.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,10 @@
   "homepage": "https://github.com/Ventronik/BE-Ajax#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "knex": "^0.14.6",
+    "morgan": "^1.9.0",
     "pg": "^7.4.1"
   }
 }
