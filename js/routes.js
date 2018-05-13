@@ -6,7 +6,7 @@ const userController = require('./controller')
 // Basic CRUD Methods
 //////////////////////////////////////////////////////////////////////////////
 
-router.post('/', userController.create)
+router.post('/post', userController.create)
 
 router.get('/', userController.getAll)
 

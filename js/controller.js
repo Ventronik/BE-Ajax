@@ -5,7 +5,6 @@ const userModel = require('./model')
 //////////////////////////////////////////////////////////////////////////////
 
 function create(req, res, next){
-
   if(!req.body.title){
     return next({ status: 400, message: 'Title Required'})
   }
