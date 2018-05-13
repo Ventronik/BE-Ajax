@@ -1,8 +1,9 @@
-const TABLE_NAME = 'posts'
+const TABLE_NAME = 'posts_dev'
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable(TABLE_NAME, function(table){
     table.increments() //id serial primary keywords
+    table.string('uuid').notNullable()
     table.string('title').notNullable() //string limit 255. Could be table.string(title, [length])
     table.text('body').notNullable()
     table.timestamps(true, true)//timestampS the s is very important, true= create, true = update

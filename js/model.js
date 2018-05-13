@@ -1,4 +1,7 @@
 const db = require('../db')
+const uuidv4 = require('uuid/v4');
+
+
 //////////////////////////////////////////////////////////////////////////////
 // Basic CRUD Methods
 //////////////////////////////////////////////////////////////////////////////
@@ -12,9 +15,10 @@ function getOne(id){
 }
 
 function create(title, body){
+  let uuid = uuidv4()
   return (
     db('posts')
-    .insert({ title: title, body: body })
+    .insert({ title: title, body: body, uuid: uuid })
     .returning('*')
   )
   .then(function([ data ]){
