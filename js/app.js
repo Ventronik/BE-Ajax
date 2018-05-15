@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
-const authController = require('./controller')
+
 
 // if(process.env.NODE_ENV !== 'production'){
 //   require('dotenv').load()
@@ -37,7 +37,7 @@ app.use(function(req, res, next){
 app.use(function(err, req, res, next){
   const errorMessage = {}
   console.log(err)
-  if(process.env.NODE_ENV !== 'production' && err.stack)
+  if(process.env.NODE_ENV !== 'development' && err.stack)
     errorMessage.stack = err.stack
 
   errorMessage.status = err.status || 500
