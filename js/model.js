@@ -31,21 +31,34 @@ function getAll(id) {
     db('posts')
       .select(
         'posts.body',
-        'posts.title'
+        'posts.title',
+        'posts.uuid'
       )
   )
 }
 
-function deletePost(title, body) {
+function editPost(uuid, title, body){
+  console.log(arguments)
+  return (
+    db('posts')
+      .update({ title, body })
+      .where({ uuid: uuid})
+      .returning('*')
+    .then(function([data]){
+      return data
+    })
+  )
+}
+
+function deletePost(uuid) {
   return(
     db('posts')
-    .select('posts.id')
-    .where('id', paper_id)
-    .then(function(){
-      return db('papers')
-      .del()
-      .where('id', paper_id)
-      .returning('*')
+    .del()
+    .where('uuid', uuid)
+    .returning('*')
+    .then(function([data]){
+      delete data.id
+      return data
     })
   )
 }
@@ -54,5 +67,6 @@ module.exports = {
   create,
   getAll,
   deletePost,
-  getOne
+  getOne,
+  editPost
 }

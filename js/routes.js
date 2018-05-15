@@ -12,7 +12,9 @@ router.get('/', userController.getAll)
 
 router.get('/:id/', userController.getOne)
 
-// router.delete('/:id/', userController.paperDelete)
+router.put('/:id', userController.editPost)
+
+router.delete('/:id/', userController.deletePost)
 
 
 

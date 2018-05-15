@@ -37,6 +37,14 @@ function getOne(req,res, next){
   .catch(next)
 }
 
+function editPost(req, res, next) {
+  userModel.editPost(req.params.id, req.body.title, req.body.body)
+  .then (function(data){
+    return res.status(204).send({ data })
+  })
+  .catch(next)
+}
+
 function deletePost(req, res, next) {
   userModel.deletePost(req.params.id)
   .then (function(data){
@@ -53,5 +61,6 @@ module.exports = {
   create,
   getAll,
   getOne,
-  deletePost
+  deletePost,
+  editPost
 }
