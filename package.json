@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex": "knex",
-    "dev": "nodemon ./js/app.js"
+    "dev": "nodemon ./js/app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
