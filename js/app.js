@@ -34,17 +34,17 @@ app.use(function(req, res, next){
 // Error Handling
 //////////////////////////////////////////////////////////////////////////////
 
-app.use(function(err, req, res, next){
-  const errorMessage = {}
-  console.log(err)
-  if(process.env.NODE_ENV !== 'development' && err.stack)
-    errorMessage.stack = err.stack
-
-  errorMessage.status = err.status || 500
-  errorMessage.message = err.message || 'Internal Server Error'
-
-  res.status(errorMessage.status).send(errorMessage)
-})
+// app.use(function(err, req, res, next){
+//   const errorMessage = {}
+//   console.log(err)
+//   if(process.env.NODE_ENV !== 'development' && err.stack)
+//     errorMessage.stack = err.stack
+//
+//   errorMessage.status = err.status || 500
+//   errorMessage.message = err.message || 'Internal Server Error'
+//
+//   res.status(errorMessage.status).send(errorMessage)
+// })
 
 //////////////////////////////////////////////////////////////////////////////
 // Starting Server
